@@ -1,0 +1,51 @@
+Arguments: 
+  /usr/bin/node /usr/share/yarn/bin/yarn.js add --dev webpack-encore
+
+PATH: 
+  /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+
+Yarn version: 
+  1.17.3
+
+Node version: 
+  8.10.0
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/webpack-encore: Not found
+      at Request.params.callback [as _callback] (/usr/share/yarn/lib/cli.js:66830:18)
+      at Request.self.callback (/usr/share/yarn/lib/cli.js:140464:22)
+      at emitTwo (events.js:126:13)
+      at Request.emit (events.js:214:7)
+      at Request.<anonymous> (/usr/share/yarn/lib/cli.js:141436:10)
+      at emitOne (events.js:116:13)
+      at Request.emit (events.js:211:7)
+      at IncomingMessage.<anonymous> (/usr/share/yarn/lib/cli.js:141358:12)
+      at Object.onceWrapper (events.js:313:30)
+      at emitNone (events.js:111:20)
+
+npm manifest: 
+  {
+      "devDependencies": {
+          "@symfony/webpack-encore": "^0.28.0",
+          "core-js": "^3.0.0",
+          "regenerator-runtime": "^0.13.2",
+          "webpack-notifier": "^1.6.0"
+      },
+      "license": "UNLICENSED",
+      "private": true,
+      "scripts": {
+          "dev-server": "encore dev-server",
+          "dev": "encore dev",
+          "watch": "encore dev --watch",
+          "build": "encore production --progress"
+      }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

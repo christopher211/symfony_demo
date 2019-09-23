@@ -1,0 +1,15 @@
+index:
+    path: /
+    controller: App\Controller\TaskController::new
+
+app_new_task:
+    path: /new
+    controller: App\Controller\TaskController::new
+
+add_product:
+    path: /product/add-product
+    controller: App\Controller\ProductController::add
+
+list_product:
+    path: /product/list-product
+    controller: App\Controller\ProductController::getProducts

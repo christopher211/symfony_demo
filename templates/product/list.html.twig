@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container" id="app">
+        <div class="list-product" :class="{'open': formOpen}">
+            <div class="button-copy" v-show="!formOpen" @click="formOpen = true">Show Product</div>
+            <form @submit="cancel()" action="" method="">
+
+                <div class="row bottom-line-red text-center">
+                    <div class="col-md-3">
+                        <label>Product Title</label>
+                    </div>
+                    <div class="col-md-2">
+                        <label>Product Price</label>
+                    </div>
+                    <div class="col-md-3">
+                        <label>Product Rating</label>
+                    </div>
+                    <div class="col-md-4">
+                        <label>Product Description</label>
+                    </div>
+                </div>
+
+                {% for i in range(0, (product|length - 1)) %}
+                <div class="form--field row text-center">
+                    <div class="col-md-3">
+                        <label>{{ product[i].name }}</label>
+                    </div>
+                    <div class="col-md-2">
+                        <label>$ {{ product[i].price }}</label>
+                    </div>
+                    <div class="col-md-3">
+                        <label>{{ product[i].rating }}</label>
+                    </div>
+                    <div class="col-md-4">
+                        <label>{{ product[i].description }}</label>
+                    </div>
+                </div>
+                {% endfor %}
+
+{#                <button type="submit" class="submit-button">Add Product</button>#}
+                <div class="text-center">
+                    <a type="button" class="btn btn-primary" href="/product/add-product">Add Product</a>
+                </div>
+                <div class="cancel"><span @click="cancel()">Cancel</span></div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

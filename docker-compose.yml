@@ -1,0 +1,32 @@
+version: '3.7'
+services:
+  db:
+    container_name: mysql_pm
+    image: mysql:5.7
+    ports: ['3306:3306']
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=product_manager
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=4256239Zxa
+      -
+  php:
+    container_name: php_pm
+    image: php:7.2
+    links:
+      - db
+
+  httpd:
+    container_name: httpd_pm
+    image: httpd:2.4
+    links:
+      - php
+#  nginx:
+#    container_name: smartosc_nginx
+#    build: ./docker/nginx
+#    ports: ['80:80']
+#    links:
+#      - php
+#    volumes:
+#      - ./docker/nginx/logs:/var/log/nginx:cached
+#      - .:/var/www/smartosc:cached
